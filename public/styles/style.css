@@ -52,30 +52,28 @@ body {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 9%;
+  gap: 6%;
   justify-content: center;
 }
 
-.album-container {
+.card-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-  background-color: brown;
   width: 20%;
   height: 40%;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 25px 15px;
 }
 
-.album-container img {
+.card-container img {
   width: 100%;
   height: 30vh;
 }
 
-#albumbutton {
-  background-color: #4D4D4D;
+.card-button {
+  background-color: #4d4d4d;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -86,7 +84,7 @@ body {
   text-align: center;
 }
 
-#albumbutton button {
+.card-button button {
   background-color: red;
   width: 125px;
   height: 30px;
@@ -96,11 +94,17 @@ body {
   border-radius: 5px;
 }
 
-#albumbutton button a {
+.card-button button a {
   text-decoration: none;
   color: white;
 }
 
-h2{
+h2 {
   margin: 5px;
+}
+
+h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
 }

@@ -1,15 +1,15 @@
 <div class="results-container">
   {{#each artistList}}
-  <div class="album-container">
-    {{#if this.images.1.url}}
-      <img src="{{this.images.1.url}}" alt="Image of {{this.name}}" />
-    {{else}}
-      <img src="images/notimage.jpg" alt="Not image avariable" />
-    {{/if}}
-    <div id="albumbutton">
-      <h2>{{this.name}}</h2>
-      <button><a href='/albums/{{this.id}}'>View Albums</a></button>
-    </div>
+    <div class="card-container">
+      {{#if this.images.1.url}}
+        <img src="{{this.images.1.url}}" alt="Image of {{this.name}}" />
+      {{else}}
+        <img src="images/notimage.jpg" alt="Not image avariable" />
+      {{/if}}
+      <div class="card-button">
+        <h2>{{this.name}}</h2>
+        <button><a href="/albums/{{this.id}}">View Albums</a></button>
+      </div>
     </div>
   {{/each}}
 </div>

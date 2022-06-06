@@ -1,14 +1,16 @@
-<div>
+<div class="results-container">
   <h1>Albums for: {{albumsList.0.artists.0.name}} </h1>
   {{#each albumsList}}
-    {{#if this.images.1.url}}
-      <img src="{{this.images.1.url}}" alt="Image of {{this.name}}" />
-    {{else}}
-      <img src="images/notimage.jpg" alt="Not image avariable" />
-    {{/if}}
-    <div>
-      <h1>{{this.name}}</h1>
-      <button><a href="/tracks/{{this.id}}">View Tracks</a></button>
+    <div class="card-container">
+      {{#if this.images.1.url}}
+        <img src="{{this.images.1.url}}" alt="Image of {{this.name}}" />
+      {{else}}
+        <img src="images/notimage.jpg" alt="Not image avariable" />
+      {{/if}}
+      <div class="card-button">
+        <h2>{{this.name}}</h2>
+        <button><a href="/tracks/{{this.id}}">View Tracks</a></button>
+      </div>
     </div>
   {{/each}}
 </div>
