@@ -42,12 +42,31 @@ app.get("/artist-search", (req, res, next) => {
     .then((data) => {
       console.log("The received data from the API: ", data.body);
       // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
-   //   res.json(data.body);
-      res.render("artist-search-results", {artistList: data.body.artists.items});
+      //   res.json(data.body);
+      res.render("artist-search-results", {
+        artistList: data.body.artists.items,
+      });
     })
     .catch((err) => {
       console.log("The error while searching artists occurred: ", err);
       res.render("index", { err: `No artists found by ${artistName}` });
+    });
+});
+
+app.get("/albums/:artistId", (req, res, next) => {
+  console.log(req.params.artistId);
+
+  spotifyApi
+    .getArtistAlbums(req.params.artistId)
+    .then((data) => {
+      console.log("Artist albums", data.body);
+      //res.json(data.body);
+      res.render("albums", {
+        albumsList: data.body.items,
+      });
+    })
+    .catch((err) => {
+      console.log("The error while searching album occurred: ", err);
     });
 });
 
