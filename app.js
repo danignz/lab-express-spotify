@@ -27,6 +27,29 @@ spotifyApi
   );
 
 // Our routes go here:
+/* Routes */
+
+//Home
+app.get("/", (req, res, next) => {
+  res.render("index");
+});
+
+app.get("/artist-search", (req, res, next) => {
+  const { artistName } = req.query;
+
+  spotifyApi
+    .searchArtists(artistName)
+    .then((data) => {
+      console.log("The received data from the API: ", data.body);
+      // ----> 'HERE WHAT WE WANT TO DO AFTER RECEIVING THE DATA FROM THE API'
+   //   res.json(data.body);
+      res.render("artist-search-results", {artistList: data.body.artists.items});
+    })
+    .catch((err) => {
+      console.log("The error while searching artists occurred: ", err);
+      res.render("index", { err: `No artists found by ${artistName}` });
+    });
+});
 
 app.listen(3000, () =>
   console.log("My Spotify project running on port 3000 🎧 🥁 🎸 🔊")
