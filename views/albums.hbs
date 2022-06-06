@@ -1,4 +1,5 @@
 <div>
+  <h1>Albums for: {{albumsList.0.artists.0.name}} </h1>
   {{#each albumsList}}
     {{#if this.images.1.url}}
       <img src="{{this.images.1.url}}" alt="Image of {{this.name}}" />
