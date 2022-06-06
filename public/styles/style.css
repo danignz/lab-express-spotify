@@ -16,33 +16,91 @@ body {
 .homebox {
   width: 45vw;
   height: 25vh;
-  background:rgba(247, 247, 247, 0.4);
+  background: rgba(247, 247, 247, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .homebox form {
-    width: 70%;
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .homebox form > input {
-    width: 90%;
-    height: 35px;
-    margin-bottom: 10px;
+  width: 90%;
+  height: 35px;
+  margin-bottom: 10px;
 }
 
 .homebox form > button {
-    background-color: red;
-    width: 180px;
-    height: 35px;
-    border: 0;
-    color: white;
-    font-size: 16px;
+  background-color: red;
+  width: 180px;
+  height: 35px;
+  border: 0;
+  color: white;
+  font-size: 16px;
+}
+
+.results-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9%;
+  justify-content: center;
+}
+
+.album-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: brown;
+  width: 20%;
+  height: 40%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.album-container img {
+  width: 100%;
+  height: 30vh;
+}
+
+#albumbutton {
+  background-color: #4D4D4D;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: white;
+  text-align: center;
+}
+
+#albumbutton button {
+  background-color: red;
+  width: 125px;
+  height: 30px;
+  border: 0;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+#albumbutton button a {
+  text-decoration: none;
+  color: white;
+}
+
+h2{
+  margin: 5px;
 }
