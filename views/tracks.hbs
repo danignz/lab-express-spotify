@@ -1,12 +1,28 @@
-<div>
-  {{#each tracksList}}
-    <div>
-      <h1>{{this.name}}</h1>
-
-      <audio controls>
-        <source src="{{this.preview_url}}" />
-      </audio>
-
-    </div>
-  {{/each}}
+<div class="tracks-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Listen</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tracksList}}
+        <tr>
+          <td><p>{{this.name}}</p></td>
+          {{#if this.preview_url}}
+            <td>
+              <audio controls>
+                <source src="{{this.preview_url}}" />
+              </audio>
+            </td>
+          {{else}}
+            <td>
+              <p>Not audio avariable for this track</p>
+            </td>
+          {{/if}}
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 </div>
